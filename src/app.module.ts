@@ -1,11 +1,15 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { TasksService } from './application/services/task.service';
 import { MongooseModule } from '@nestjs/mongoose';
+import { Task, TaskSchema } from './domain/taskSchema';
+import { DatabaseModule } from './infra/database/database.module';
+import  'dotenv';
+import { TaskRepository } from './infra/repositories/TaskRepository';
+import { AppController } from './controllers/task.controller';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb://localhost/nest')],
+  imports: [DatabaseModule, MongooseModule.forFeature([{ name: Task.name, schema: TaskSchema }]), DatabaseModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [TasksService,TaskRepository],
 })
 export class AppModule {}
