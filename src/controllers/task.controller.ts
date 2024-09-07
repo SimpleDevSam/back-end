@@ -3,9 +3,11 @@ import {
   HttpException, ParseUUIDPipe
 } from '@nestjs/common';
 import { TasksService } from 'src/application/services/task.service';
-import { Task } from 'src/domain/taskSchema';
 import { ResourceNotFound } from 'src/application/errors/ResourceNotFound';
-import ResponseType from 'src/shared/Response';
+import ResponseType, { ResponseResult } from 'src/shared/abstractions/Response';
+import { CreateTaskDTO } from 'src/application/DTOs/createTaskDTO';
+import { Task } from 'src/domain/entities/task';
+import { UpdateTaskDTO } from 'src/application/DTOs/updateTastkDTO';
 
 
 
@@ -14,9 +16,9 @@ export class AppController {
   constructor(private readonly tasksService: TasksService) { }
 
   @Post()
-  async createTask(@Body() task: Task): Promise<ResponseType<Task>> {
+  async createTask(@Body() taskDTO: CreateTaskDTO): Promise<ResponseType<Task>> {
     try {
-      return await this.tasksService.create(task);
+      return await this.tasksService.create(taskDTO);
     } catch (error) {
       if (error._message === 'Task validation failed') {
         throw new HttpException(error, HttpStatus.BAD_REQUEST)
@@ -47,10 +49,10 @@ export class AppController {
   @Put(':id')
   async updateTask(
     @Param('id', new ParseUUIDPipe()) id: string,
-    @Body() updatedTask: Task
-  ): Promise<any> {
+    @Body() taskDTO: UpdateTaskDTO
+  ): Promise<ResponseResult<Task>> {
     try {
-      return await this.tasksService.update(id, updatedTask);
+      return await this.tasksService.update(id, taskDTO);
     } catch (error) {
 
       if (error._message === 'Validation failed') {

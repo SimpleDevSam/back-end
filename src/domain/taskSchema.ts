@@ -1,18 +1,18 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { UUID } from 'crypto';
-import { Date, HydratedDocument } from 'mongoose';
+import { Date, HydratedDocument, SchemaType, SchemaTypes } from 'mongoose';
 import { TaskStatus } from 'src/domain/enums/taskStatus';
 import { v4 as uuidv4, validate as uuidValidate } from "uuid";
 
-export type TaskDocument = HydratedDocument<Task>;
+export type TaskDocument = HydratedDocument<TaskDocumentSchema>;
 
 @Schema({
     toJSON: { virtuals: true, versionKey: false, transform: (_, ret) => { delete ret._id; } },
     toObject: { virtuals: true, versionKey: false, transform: (_, ret) => { delete ret._id; } }
 })
-export class Task {
+export class TaskDocumentSchema {
     _
-    @Prop({ required: true, default: uuidv4 })
+    @Prop({ required: true, default: uuidv4,unique:true,immutable:true })
     id: UUID;
 
     @Prop({ required: true })
@@ -31,10 +31,10 @@ export class Task {
     })
     keywords: string[];
 
-    @Prop({ required: true, type: Date })
+    @Prop({ required: true, type: SchemaTypes.Date})
     creationDate: Date;
 
-    @Prop({ required: true, type: Date })
+    @Prop({ required: true,type: SchemaTypes.Date })
     updatedDate: Date;
 
     @Prop({ required: true, type: String, enum: [0, 1, 2] })
@@ -42,4 +42,4 @@ export class Task {
 
 }
 
-export const TaskSchema = SchemaFactory.createForClass(Task);
+export const TaskSchema = SchemaFactory.createForClass(TaskDocumentSchema);

@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Types, HydratedDocument } from 'mongoose';
-import { Task } from './taskSchema';
+import { TaskDocumentSchema } from './taskSchema';
 import { UUID } from 'crypto';
 
 export type LinkDocument = HydratedDocument<Link>;
@@ -14,7 +14,7 @@ export class Link {
     @Prop({ required: true })
     link: string;
 
-    @Prop({ type: Types.ObjectId, ref: Task.name, required: true })
+    @Prop({ type: Types.ObjectId, ref: TaskDocumentSchema.name, required: true })
     taskId: Types.ObjectId; 
 }
 

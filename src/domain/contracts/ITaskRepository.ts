@@ -1,4 +1,5 @@
-import { Task } from "src/domain/taskSchema";
+import { Task } from "../entities/task"
+
 
 export interface ITaskRepository {
     findOneById(id:string): Promise<Task>

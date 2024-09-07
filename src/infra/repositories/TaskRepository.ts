@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
 import { ITaskRepository } from "src/domain/contracts/ITaskRepository";
-import { Task } from "src/domain/taskSchema";
+import { Task } from "src/domain/entities/task";
 
 @Injectable()
 export class TaskRepository implements ITaskRepository {
@@ -28,7 +28,7 @@ export class TaskRepository implements ITaskRepository {
 
     async updateOneById(taskId: string, task: Task): Promise<Task> {
         await this.taskModel.validate(task);
-        return await this.taskModel.findOneAndUpdate({ id: taskId }, task).exec();
+        return await this.taskModel.findOneAndUpdate({ id: taskId }, task, {new:true}).exec();
     }
 
 }

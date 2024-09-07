@@ -1,8 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { Task } from '../../domain/taskSchema';
 import { TaskRepository } from 'src/infra/repositories/TaskRepository';
 import { ResourceNotFound } from 'src/application/errors/ResourceNotFound';
-import { ResponseResult } from 'src/shared/Response'
+import ResponseResult from 'src/shared/abstractions/Response';
+import { CreateTaskDTO } from '../DTOs/createTaskDTO';
+import { createTaskFromDTO } from 'src/shared/helpers/createTaskFromDTO ';
+import { Task } from 'src/domain/entities/task';
+import { UpdateTaskDTO } from '../DTOs/updateTastkDTO';
+import { updateTaskFromDTO } from 'src/shared/helpers/updateTaskfromDTO';
 
 
 
@@ -11,7 +15,9 @@ export class TasksService {
   constructor(private readonly _taskRepository: TaskRepository) { }
 
 
-  async create(task: Task): Promise<ResponseResult<Task>> {
+  async create(taskDto: CreateTaskDTO): Promise<ResponseResult<Task>> {
+
+    const task = createTaskFromDTO(taskDto)
     await this._taskRepository.create(task);
     const response: ResponseResult<Task> = { isSuccess: true }
     return response
@@ -34,7 +40,9 @@ export class TasksService {
     return response
   }
 
-  async update(id: string, task: Task): Promise<ResponseResult<Task>> {
+  async update(id: string, taskDTO: UpdateTaskDTO): Promise<ResponseResult<Task>> {
+
+    const task = updateTaskFromDTO(taskDTO);
     const taskToBeUpdated = await this._taskRepository.updateOneById(id, task);
 
     if (!taskToBeUpdated) {
