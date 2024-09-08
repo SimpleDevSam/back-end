@@ -8,9 +8,7 @@ import { MongooseModule } from '@nestjs/mongoose';
         imports: [ConfigModule],
         inject: [ConfigService],
         useFactory: async (configService: ConfigService) => ({
-          uri: configService.get<string>('MONGODB_URI'),
-          useNewUrlParser: true,
-          useUnifiedTopology: true,
+          uri: configService.get<string>('MONGODB_URI')
         }),
       }),
     ],

@@ -2,21 +2,22 @@ import {
   Body, Controller, Get, Post, Param, Delete, Put, Query, HttpStatus,
   HttpException, ParseUUIDPipe
 } from '@nestjs/common';
-import { TasksService } from 'src/application/services/task.service';
+
 import { ResourceNotFound } from 'src/application/errors/ResourceNotFound';
-import ResponseType, { ResponseResult } from 'src/shared/abstractions/Response';
+import { ResponseResult } from 'src/shared/abstractions/Response';
 import { CreateTaskDTO } from 'src/application/DTOs/createTaskDTO';
 import { Task } from 'src/domain/entities/task';
 import { UpdateTaskDTO } from 'src/application/DTOs/updateTastkDTO';
+import { TasksService } from 'src/application/services/tasks/task.service';
 
 
 
 @Controller('/task')
-export class AppController {
+export class TasksController {
   constructor(private readonly tasksService: TasksService) { }
 
   @Post()
-  async createTask(@Body() taskDTO: CreateTaskDTO): Promise<ResponseType<Task>> {
+  async createTask(@Body() taskDTO: CreateTaskDTO): Promise<ResponseResult<Task>> {
     try {
       return await this.tasksService.create(taskDTO);
     } catch (error) {
@@ -31,12 +32,12 @@ export class AppController {
   async getAllTasks(
     @Query('limit') limit = 10,
     @Query('offset') offset = 0
-  ): Promise<ResponseType<Task[]>> {
+  ): Promise<ResponseResult<Task[]>> {
     return await this.tasksService.getAll(+limit, +offset);
   };
 
   @Get(':id')
-  async getTaskById(@Param('id', new ParseUUIDPipe()) id: string): Promise<ResponseType<Task>> {
+  async getTaskById(@Param('id', new ParseUUIDPipe()) id: string): Promise<ResponseResult<Task>> {
     try {
       return await this.tasksService.getOne(id);
     } catch (error) {
@@ -68,7 +69,7 @@ export class AppController {
   }
 
   @Delete(':id')
-  async deleteTask(@Param('id', new ParseUUIDPipe()) id: string): Promise<ResponseType<Task>> {
+  async deleteTask(@Param('id', new ParseUUIDPipe()) id: string): Promise<ResponseResult<Task>> {
     try {
       return await this.tasksService.delete(id);
     } catch (error) {

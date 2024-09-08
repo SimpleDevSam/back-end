@@ -2,10 +2,10 @@ import { Injectable } from '@nestjs/common';
 import { TaskRepository } from 'src/infra/repositories/TaskRepository';
 import { ResourceNotFound } from 'src/application/errors/ResourceNotFound';
 import ResponseResult from 'src/shared/abstractions/Response';
-import { CreateTaskDTO } from '../DTOs/createTaskDTO';
+import { CreateTaskDTO } from '../../DTOs/createTaskDTO';
 import { createTaskFromDTO } from 'src/shared/helpers/createTaskFromDTO ';
 import { Task } from 'src/domain/entities/task';
-import { UpdateTaskDTO } from '../DTOs/updateTastkDTO';
+import { UpdateTaskDTO } from '../../DTOs/updateTastkDTO';
 import { updateTaskFromDTO } from 'src/shared/helpers/updateTaskfromDTO';
 
 
