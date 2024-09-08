@@ -31,10 +31,8 @@ export class TasksController {
 
   @Get()
   async getAllTasks(
-    @Query('limit') limit = 10,
-    @Query('offset') offset = 0
   ): Promise<ResponseResult<Task[]>> {
-    return await this.tasksService.getAll(+limit, +offset);
+    return await this.tasksService.getAll();
   };
 
   @Get(':id')

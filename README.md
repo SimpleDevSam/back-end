@@ -1,85 +1,68 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+API de Gerenciamento de Tarefas - Desafio Técnico Radix
+Esta é uma API de gerenciamento de tarefas construída com NestJS para o desafio técnico da Radix. Ela fornece funcionalidades CRUD para o gerenciamento de tarefas.
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Configuração do projeto
+Para rodar o projeto localmente:
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Instale as dependências:
 
-## Description
+bash
+Copiar código
+npm install
+Inicie o servidor de desenvolvimento:
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+bash
+Copiar código
+npm run start:dev
+Compile o projeto para produção:
 
-## Project setup
+bash
+Copiar código
+npm run build
+Rode o servidor em produção:
 
-```bash
-$ npm install
-```
+bash
+Copiar código
+npm run start:prod
+Executando os testes
+Para executar os testes, utilize os seguintes comandos:
 
-## Compile and run the project
+Testes unitários:
 
-```bash
-# development
-$ npm run start
+bash
+Copiar código
+npm run test
+Testes end-to-end (e2e):
 
-# watch mode
-$ npm run start:dev
+bash
+Copiar código
+npm run test:e2e
+Cobertura de testes:
 
-# production mode
-$ npm run start:prod
-```
+bash
+Copiar código
+npm run test:cov
+Visão geral da aplicação
+Esta API fornece funcionalidades para gerenciar tarefas, como criar, atualizar, recuperar e deletar tarefas. A API foi desenvolvida utilizando o NestJS, um framework Node.js voltado para a criação de aplicações do lado servidor de forma eficiente e escalável.
 
-## Run tests
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Visão geral das dependências
+@nestjs/common, @nestjs/core, @nestjs/platform-express: Pacotes centrais do NestJS usados para criar a aplicação.
+@nestjs/config: Para o gerenciamento de variáveis de ambiente.
+@nestjs/mongoose: Integração com o Mongoose para interação com MongoDB.
+mongoose: Ferramenta de modelagem de objetos MongoDB, usada para definir esquemas e interagir com o banco de dados.
+axios: Utilizado para realizar requisições HTTP.
+dotenv: Carrega variáveis de ambiente a partir de um arquivo .env.
+reflect-metadata: Habilita o uso de decorators no TypeScript.
+rxjs: Biblioteca para programação reativa com observables.
+uuid: Para gerar IDs únicos para as tarefas.
+Dependências de desenvolvimento
+@nestjs/cli, @nestjs/schematics, @nestjs/testing: Ferramentas para o desenvolvimento e testes com NestJS.
+jest, ts-jest, @types/jest: Framework de testes Jest e suporte ao TypeScript.
+supertest, @types/supertest: Ferramentas para testes de APIs HTTP.
+typescript: Suporte à linguagem TypeScript.
+eslint, @typescript-eslint/eslint-plugin, @typescript-eslint/parser: Para verificação estática de código TypeScript.
+prettier, eslint-config-prettier, eslint-plugin-prettier: Ferramentas para formatação de código.
+ts-node, ts-loader: Ferramentas para rodar e compilar código TypeScript no Node.js.
+source-map-support: Para melhor exibição de erros durante o desenvolvimento com TypeScript.
+Licença
+Este projeto está licenciado sob a licença UNLICENSED.

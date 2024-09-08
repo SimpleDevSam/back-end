@@ -11,12 +11,10 @@ export class TaskRepository implements ITaskRepository {
     async findOneById(taskId: string): Promise<Task> {
         return await this.taskModel.findOne({ id: taskId }).exec();
     }
-    async findAll(limit: number, offset: number): Promise<Task[]> {
+    async findAll(): Promise<Task[]> {
         return this.taskModel.find({})
             .sort({ createdAt: -1 })
-            .skip(offset)
-            .limit(limit)
-            .exec();
+            .exec()
     };
 
     async create(task: Task): Promise<Task> {
@@ -28,7 +26,7 @@ export class TaskRepository implements ITaskRepository {
 
     async updateOneById(taskId: string, task: Task): Promise<Task> {
         await this.taskModel.validate(task);
-        return await this.taskModel.findOneAndUpdate({ id: taskId }, task, {new:true}).exec();
+        return await this.taskModel.findOneAndUpdate({ id: taskId }, task, { new: true }).exec();
     }
 
 }

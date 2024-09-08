@@ -23,8 +23,8 @@ export class TasksService {
     return response
   }
 
-  async getAll(limit: number, offset: number): Promise<ResponseResult<Task[]>> {
-    const tasks = await this._taskRepository.findAll(limit, offset);
+  async getAll(): Promise<ResponseResult<Task[]>> {
+    const tasks = await this._taskRepository.findAll();
     const response: ResponseResult<Task[]> = { isSuccess: true, data: tasks }
     return response
   }
