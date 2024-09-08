@@ -1,5 +1,6 @@
 import { Controller, Get, HttpException, HttpStatus, Param, ParseUUIDPipe } from '@nestjs/common';
-import { ResourceNotFound } from 'src/application/errors/ResourceNotFound';
+import { ResourceNotFound } from 'src/application/errors/ResourceNotFoundError';
+import { TaskIsConcludedError } from 'src/application/errors/TaskIsConcludedError';
 import { NewsService } from 'src/application/services/news/news.service';
 import { News } from 'src/domain/entities/news';
 import ResponseResult from 'src/shared/abstractions/Response';
@@ -15,6 +16,9 @@ export class NewsController {
       } catch (error) {
         if (error instanceof ResourceNotFound) {
           throw new HttpException(error.message, HttpStatus.NOT_FOUND)
+        }
+        if (error instanceof TaskIsConcludedError) {
+          throw new HttpException(error.message, HttpStatus.UNPROCESSABLE_ENTITY)
         }
       }
     }

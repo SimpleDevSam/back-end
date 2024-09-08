@@ -3,12 +3,13 @@ import {
   HttpException, ParseUUIDPipe
 } from '@nestjs/common';
 
-import { ResourceNotFound } from 'src/application/errors/ResourceNotFound';
+
 import { ResponseResult } from 'src/shared/abstractions/Response';
 import { CreateTaskDTO } from 'src/application/DTOs/createTaskDTO';
 import { Task } from 'src/domain/entities/task';
 import { UpdateTaskDTO } from 'src/application/DTOs/updateTastkDTO';
 import { TasksService } from 'src/application/services/tasks/task.service';
+import { ResourceNotFound } from 'src/application/errors/ResourceNotFoundError';
 
 
 

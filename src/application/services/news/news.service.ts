@@ -1,7 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { ResourceNotFound } from 'src/application/errors/ResourceNotFound';
+import { ResourceNotFound } from 'src/application/errors/ResourceNotFoundError';
+
+import { TaskIsConcludedError } from 'src/application/errors/TaskIsConcludedError';
 import { News } from 'src/domain/entities/news';
+import { TaskStatus } from 'src/domain/enums/taskStatus';
 import { NewsRepository } from 'src/infra/repositories/NewsRepository';
 import { TaskRepository } from 'src/infra/repositories/TaskRepository';
 import ResponseResult from 'src/shared/abstractions/Response';
@@ -22,6 +25,10 @@ export class NewsService {
 
         if (!task) {
             throw new ResourceNotFound()
+        }
+
+        if (Number(task.status) === TaskStatus.Concluída){
+            throw new TaskIsConcludedError()
         }
 
         const daysAgoToTake = this.configService.get<string>('DAYS_TO_TAKE_NEWS')
