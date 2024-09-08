@@ -1,5 +1,18 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 
-@Module({imports:[MongooseModule.forRoot('mongodb+srv://samuelufop121035:Y5OEcDJnDdSoGGjo@desafioradixdb.thd2n.mongodb.net/?retryWrites=true&w=majority&appName=DesafioRadixDb')]})
-export class DatabaseModule {}
+@Module({
+    imports: [
+      MongooseModule.forRootAsync({
+        imports: [ConfigModule],
+        inject: [ConfigService],
+        useFactory: async (configService: ConfigService) => ({
+          uri: configService.get<string>('MONGODB_URI'), // Load the MongoDB URI from the environment
+          useNewUrlParser: true,
+          useUnifiedTopology: true,
+        }),
+      }),
+    ],
+  })
+  export class DatabaseModule {}
