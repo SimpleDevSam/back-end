@@ -33,7 +33,7 @@ Este é um projeto de back-end desenvolvido para uma entrevista técnica na Radi
  - Cobertura de testes
  `npm run test:cov`
 
-##Dependências/bibliotecas
+## Dependências/bibliotecas
 
 -   **@nestjs/common**, **@nestjs/core**, **@nestjs/platform-express**: Pacotes centrais do NestJS usados para criar a aplicação.
 -   **@nestjs/config**: Para o gerenciamento de variáveis de ambiente.
