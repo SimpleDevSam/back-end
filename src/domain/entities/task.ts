@@ -1,4 +1,4 @@
-import { TaskStatus } from "../enums/taskStatus";
+import { TaskStatus } from "@domain/enums/taskStatus";
 
 export class Task {
     id: string;

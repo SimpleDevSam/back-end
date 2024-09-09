@@ -1,15 +1,14 @@
-import { Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { ResourceNotFound } from 'src/application/errors/ResourceNotFoundError';
-
-import { TaskIsConcludedError } from 'src/application/errors/TaskIsConcludedError';
-import { News } from 'src/domain/entities/news';
-import { TaskStatus } from 'src/domain/enums/taskStatus';
-import { NewsRepository } from 'src/infra/repositories/NewsRepository';
-import { TaskRepository } from 'src/infra/repositories/TaskRepository';
-import ResponseResult from 'src/shared/abstractions/Response';
-import { DateHelper } from 'src/shared/helpers/dateHelper';
-import transformKeywordsToQuery from 'src/shared/helpers/keywordsToUriEncoded';
+import { ResourceNotFound } from "@application/errors/ResourceNotFoundError"
+import { TaskIsConcludedError } from "@application/errors/TaskIsConcludedError"
+import { News } from "@domain/entities/news"
+import { TaskStatus } from "@domain/enums/taskStatus"
+import { NewsRepository } from "@infra/repositories/NewsRepository"
+import { TaskRepository } from "@infra/repositories/TaskRepository"
+import { Injectable } from "@nestjs/common"
+import { ConfigService } from "@nestjs/config"
+import ResponseResult from "@shared/abstractions/Response"
+import { DateHelper } from "@shared/helpers/dateHelper"
+import transformKeywordsToQuery from "@shared/helpers/keywordsToUriEncoded"
 
 @Injectable()
 export class NewsService {

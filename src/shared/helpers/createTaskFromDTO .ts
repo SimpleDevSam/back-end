@@ -1,5 +1,5 @@
-import { CreateTaskDTO } from 'src/application/DTOs/createTaskDTO';
-import { Task } from 'src/domain/entities/task';
+import { CreateTaskDTO } from "@application/DTOs/createTaskDTO";
+import { Task } from "@domain/entities/task";
 import { v4 as uuidv4 } from "uuid";
 
 export function createTaskFromDTO(dto: CreateTaskDTO): Task {

@@ -1,12 +1,12 @@
-import { Injectable } from '@nestjs/common';
-import { TaskRepository } from 'src/infra/repositories/TaskRepository';
-import ResponseResult from 'src/shared/abstractions/Response';
-import { CreateTaskDTO } from '../../DTOs/createTaskDTO';
-import { createTaskFromDTO } from 'src/shared/helpers/createTaskFromDTO ';
-import { Task } from 'src/domain/entities/task';
-import { UpdateTaskDTO } from '../../DTOs/updateTastkDTO';
-import { updateTaskFromDTO } from 'src/shared/helpers/updateTaskfromDTO';
-import { ResourceNotFound } from 'src/application/errors/ResourceNotFoundError';
+import { CreateTaskDTO } from "@application/DTOs/createTaskDTO";
+import { UpdateTaskDTO } from "@application/DTOs/updateTastkDTO";
+import { ResourceNotFound } from "@application/errors/ResourceNotFoundError";
+import { Task } from "@domain/entities/task";
+import { TaskRepository } from "@infra/repositories/TaskRepository";
+import { Injectable } from "@nestjs/common";
+import ResponseResult from "@shared/abstractions/Response";
+import { createTaskFromDTO } from "@shared/helpers/createTaskFromDTO ";
+import { updateTaskFromDTO } from "@shared/helpers/updateTaskfromDTO";
 
 
 

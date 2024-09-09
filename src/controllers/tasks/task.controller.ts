@@ -1,15 +1,10 @@
-import {
-  Body, Controller, Get, Post, Param, Delete, Put, Query, HttpStatus,
-  HttpException, ParseUUIDPipe
-} from '@nestjs/common';
-
-
-import { ResponseResult } from 'src/shared/abstractions/Response';
-import { CreateTaskDTO } from 'src/application/DTOs/createTaskDTO';
-import { Task } from 'src/domain/entities/task';
-import { UpdateTaskDTO } from 'src/application/DTOs/updateTastkDTO';
-import { TasksService } from 'src/application/services/tasks/task.service';
-import { ResourceNotFound } from 'src/application/errors/ResourceNotFoundError';
+import { CreateTaskDTO } from "@application/DTOs/createTaskDTO";
+import { UpdateTaskDTO } from "@application/DTOs/updateTastkDTO";
+import { ResourceNotFound } from "@application/errors/ResourceNotFoundError";
+import { TasksService } from "@application/services/tasks/task.service";
+import { Task } from "@domain/entities/task";
+import { Controller, Post, Body, HttpException, HttpStatus, Get, Param, ParseUUIDPipe, Put, Delete } from "@nestjs/common";
+import ResponseResult from "@shared/abstractions/Response";
 
 
 

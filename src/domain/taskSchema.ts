@@ -1,8 +1,9 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { UUID } from 'crypto';
-import { Date, HydratedDocument, SchemaType, SchemaTypes } from 'mongoose';
-import { TaskStatus } from 'src/domain/enums/taskStatus';
 import { v4 as uuidv4, validate as uuidValidate } from "uuid";
+import { HydratedDocument, SchemaTypes } from 'mongoose';
+import { TaskStatus } from './enums/taskStatus';
+
 
 export type TaskDocument = HydratedDocument<TaskDocumentSchema>;
 

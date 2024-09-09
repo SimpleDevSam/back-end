@@ -1,8 +1,9 @@
+import { ITaskRepository } from "@domain/contracts/ITaskRepository";
+import { Task } from "@domain/entities/task";
 import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
-import { ITaskRepository } from "src/domain/contracts/ITaskRepository";
-import { Task } from "src/domain/entities/task";
+
 
 @Injectable()
 export class TaskRepository implements ITaskRepository {

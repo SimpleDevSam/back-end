@@ -1,5 +1,5 @@
-import { UpdateTaskDTO } from "src/application/DTOs/updateTastkDTO";
-import { Task } from "src/domain/entities/task";
+import { UpdateTaskDTO } from "@application/DTOs/updateTastkDTO";
+import { Task } from "@domain/entities/task";
 
 
 export function updateTaskFromDTO(dto:UpdateTaskDTO): Task {

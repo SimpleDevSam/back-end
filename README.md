@@ -4,6 +4,10 @@
 
 Este é um projeto de back-end desenvolvido para uma entrevista técnica na Radix. Trata-se de uma API de gerenciamento de tarefas construída com NestJS, que permite aos usuários criar, excluir, listar e atualizar tarefas. Além disso, a API possui uma integração com o [NewsAPI](https://newsapi.org/) para exibir notícias relacionadas às palavras-chave das tarefas.
 
+## Stacks
+- Nest JS framework com Typescript.
+- MongoDB como banco de dados (uristring está no .env)
+
 ## Funcionalidades
 - **Gerenciamento de Tarefas:**
   - Adicionar novas tarefas

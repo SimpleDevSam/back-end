@@ -1,5 +1,6 @@
+import { TaskStatus } from "@domain/enums/taskStatus";
 import { UUID } from "crypto";
-import { TaskStatus } from "src/domain/enums/taskStatus";
+
 
 export interface UpdateTaskDTO {
     id:UUID,

@@ -1,7 +1,8 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Types, HydratedDocument } from 'mongoose';
-import { TaskDocumentSchema } from './taskSchema';
 import { UUID } from 'crypto';
+import { HydratedDocument, Types } from 'mongoose';
+import { TaskDocumentSchema } from './taskSchema';
+
 
 export type LinkDocument = HydratedDocument<Link>;
 

@@ -1,8 +1,9 @@
-import { Injectable } from "@nestjs/common";
-import { ConfigService } from "@nestjs/config";
-import axios from "axios";
-import { INewsRepository } from "src/domain/contracts/INewsRepository";
-import { News } from "src/domain/entities/news";
+import { INewsRepository } from "@domain/contracts/INewsRepository"
+import { News } from "@domain/entities/news"
+import { Injectable } from "@nestjs/common"
+import { ConfigService } from "@nestjs/config"
+import axios from "axios"
+
 
 @Injectable()
 export class NewsRepository implements INewsRepository {

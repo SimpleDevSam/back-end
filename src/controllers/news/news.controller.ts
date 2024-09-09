@@ -1,9 +1,10 @@
-import { Controller, Get, HttpException, HttpStatus, Param, ParseUUIDPipe } from '@nestjs/common';
-import { ResourceNotFound } from 'src/application/errors/ResourceNotFoundError';
-import { TaskIsConcludedError } from 'src/application/errors/TaskIsConcludedError';
-import { NewsService } from 'src/application/services/news/news.service';
-import { News } from 'src/domain/entities/news';
-import ResponseResult from 'src/shared/abstractions/Response';
+import { ResourceNotFound } from "@application/errors/ResourceNotFoundError"
+import { TaskIsConcludedError } from "@application/errors/TaskIsConcludedError"
+import { NewsService } from "@application/services/news/news.service"
+import { News } from "@domain/entities/news"
+import { Controller, Get, Param, ParseUUIDPipe, HttpException, HttpStatus } from "@nestjs/common"
+import ResponseResult from "@shared/abstractions/Response"
+
 
 @Controller('news')
 export class NewsController {

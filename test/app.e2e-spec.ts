@@ -1,24 +1,34 @@
-import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
+import { Test } from '@nestjs/testing';
 import * as request from 'supertest';
-import { AppModule } from './../src/app.module';
+import { Task } from '../src/domain/entities/task'
+import type ResponseResult from '../src/shared/abstractions/Response';
+import { AppModule } from '../src/app.module';
+import { TasksService } from '../src/application/services/tasks/task.service';
 
-describe('AppController (e2e)', () => {
+describe('Task Controller (e2e)', () => {
   let app: INestApplication;
+  let catsService = { findAll: () => ['test'] };
 
-  beforeEach(async () => {
-    const moduleFixture: TestingModule = await Test.createTestingModule({
+  beforeAll(async () => {
+    const moduleFixture = await Test.createTestingModule({
       imports: [AppModule],
-    }).compile();
+    })
+      .compile();
 
     app = moduleFixture.createNestApplication();
     await app.init();
   });
 
-  it('/ (GET)', () => {
+  it('should get all tasks', async () => {
     return request(app.getHttpServer())
-      .get('/')
+      .get('/task')
       .expect(200)
-      .expect('Hello World!');
   });
+
+  afterAll(async () => {
+    await app.close();
+  });
+
 });
+
