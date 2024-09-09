@@ -24,7 +24,13 @@ export class TaskDocumentSchema {
         type: [String],
         validate: {
             validator: function (keywords: string[]) {
-                return keywords.length > 0 && keywords.every(keyword => keyword && keyword.trim().length > 0);
+                return Array.isArray(keywords) &&
+                keywords.length > 0 &&
+                keywords.every(keyword => 
+                    typeof keyword === 'string' && 
+                    keyword.trim().length > 0 &&
+                    !/^\d+$/.test(keyword)
+                );
             },
             message: 'Keywords array cannot contain empty elements or be empty.',
             path: 'keywords'

@@ -18,8 +18,8 @@ export class TasksService {
   async create(taskDto: CreateTaskDTO): Promise<ResponseResult<Task>> {
 
     const task = createTaskFromDTO(taskDto)
-    await this._taskRepository.create(task);
-    const response: ResponseResult<Task> = { isSuccess: true }
+    const createdTask = await this._taskRepository.create(task);
+    const response: ResponseResult<Task> = { isSuccess: true , data:createdTask}
     return response
   }
 

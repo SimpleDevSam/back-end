@@ -8,6 +8,15 @@ Este é um projeto de back-end desenvolvido para uma entrevista técnica na Radi
 - Nest JS framework com Typescript.
 - MongoDB como banco de dados (uristring está no .env)
 
+## Variáveis de ambiente
+
+MONGODB_URI_PROD=mongodb+srv://samuelufop121035:Y5OEcDJnDdSoGGjo@desafioradixdb.thd2n.mongodb.net/prod?retryWrites=true&w=majority&appName=DesafioRadixDb
+MONGODB_URI_TEST=mongodb+srv://samuelufop121035:Y5OEcDJnDdSoGGjo@desafioradixdb.thd2n.mongodb.net/test?retryWrites=true&w=majority&appName=DesafioRadixDbTest
+NEWS_API_KEY=ca57ea8ed07f44239f3cc3d40ddd6c52
+NEWS_API_URL=https://newsapi.org/v2/everything
+DAYS_TO_TAKE_NEWS=5
+
+
 ## Funcionalidades
 - **Gerenciamento de Tarefas:**
   - Adicionar novas tarefas
@@ -30,12 +39,9 @@ Este é um projeto de back-end desenvolvido para uma entrevista técnica na Radi
  5. Rodar a build para prod:
  `npm run start:prod`
  ### Testes
-- Testes unitários
- `npm run test`
  - Testes end-to-end (e2e)
  `npm run test:e2e`
- - Cobertura de testes
- `npm run test:cov`
+
 
 ## Dependências/bibliotecas
 

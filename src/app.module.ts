@@ -1,5 +1,4 @@
 import { NewsService } from "@application/services/news/news.service";
-import { TasksService } from "@application/services/tasks/task.service";
 import { Task } from "@domain/entities/task";
 import { TaskSchema } from "@domain/taskSchema";
 import { DatabaseModule } from "@infra/database/database.module";
@@ -10,6 +9,7 @@ import { MongooseModule } from "@nestjs/mongoose";
 import { Module } from '@nestjs/common';
 import { NewsController } from "@controllers/news/news.controller";
 import { TasksController } from "@controllers/tasks/task.controller";
+import { TasksService } from "@application/services/tasks/task.service";
 
 
 @Module({

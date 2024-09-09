@@ -25,7 +25,7 @@ export class TasksController {
   }
 
   @Get()
-  async getAllTasks(
+  async getAll(
   ): Promise<ResponseResult<Task[]>> {
     return await this.tasksService.getAll();
   };
