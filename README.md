@@ -2,7 +2,7 @@
 
 ## Introdução
 
-Este é um projeto de back-end desenvolvido para uma entrevista técnica na Radix Software Company. Trata-se de uma API de gerenciamento de tarefas construída com NestJS, que permite aos usuários criar, excluir, listar e atualizar tarefas. Além disso, a API possui uma integração com o [NewsAPI](https://newsapi.org/) para exibir notícias relacionadas às palavras-chave das tarefas.
+Este é um projeto de back-end desenvolvido para uma entrevista técnica na Radix. Trata-se de uma API de gerenciamento de tarefas construída com NestJS, que permite aos usuários criar, excluir, listar e atualizar tarefas. Além disso, a API possui uma integração com o [NewsAPI](https://newsapi.org/) para exibir notícias relacionadas às palavras-chave das tarefas.
 
 ## Funcionalidades
 - **Gerenciamento de Tarefas:**
