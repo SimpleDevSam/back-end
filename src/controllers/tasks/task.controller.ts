@@ -8,7 +8,7 @@ import ResponseResult from "@shared/abstractions/Response";
 
 
 
-@Controller('/task')
+@Controller('/tasks')
 export class TasksController {
   constructor(private readonly tasksService: TasksService) { }
 
