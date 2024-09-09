@@ -14,6 +14,8 @@ Este é um projeto de back-end desenvolvido para uma entrevista técnica na Radi
 
 ## Variáveis de ambiente
 
+- Favor notar que o banco está hosteado na cloud, não sendo necessário instalá-lo.
+
 - MONGODB_URI_PROD=mongodb+srv://samuelufop121035:Y5OEcDJnDdSoGGjo@desafioradixdb.thd2n.mongodb.net/prod?retryWrites=true&w=majority&appName=DesafioRadixDb
 - MONGODB_URI_TEST=mongodb+srv://samuelufop121035:Y5OEcDJnDdSoGGjo@desafioradixdb.thd2n.mongodb.net/test?retryWrites=true&w=majority&appName=DesafioRadixDbTest
 - NEWS_API_KEY=ca57ea8ed07f44239f3cc3d40ddd6c52
