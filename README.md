@@ -8,6 +8,10 @@ Este é um projeto de back-end desenvolvido para uma entrevista técnica na Radi
 - Nest JS framework com Typescript.
 - MongoDB como banco de dados (uristring está no .env)
 
+## Para acessar a documentação da api no swagger
+
+- Acesse http://localhost:3001/api
+
 ## Variáveis de ambiente
 
 - MONGODB_URI_PROD=mongodb+srv://samuelufop121035:Y5OEcDJnDdSoGGjo@desafioradixdb.thd2n.mongodb.net/prod?retryWrites=true&w=majority&appName=DesafioRadixDb
