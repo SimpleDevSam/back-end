@@ -56,6 +56,9 @@
     "typescript": "^5.1.3"
   },
   "jest": {
+    "modulePaths": [
+  "<rootDir>"
+],
     "moduleNameMapper": {
       "^@infra/(.*)$": "<rootDir>/src/infra/$1",
       "^@shared/(.*)$": "<rootDir>/src/shared/$1",
