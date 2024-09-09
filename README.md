@@ -1,68 +1,46 @@
-API de Gerenciamento de Tarefas - Desafio Técnico Radix
-Esta é uma API de gerenciamento de tarefas construída com NestJS para o desafio técnico da Radix. Ela fornece funcionalidades CRUD para o gerenciamento de tarefas.
+# API de Gerenciamento de Tarefas
 
-Configuração do projeto
-Para rodar o projeto localmente:
+## Introdução
 
-Instale as dependências:
+Este é um projeto de back-end desenvolvido para uma entrevista técnica na Radix Software Company. Trata-se de uma API de gerenciamento de tarefas construída com NestJS, que permite aos usuários criar, excluir, listar e atualizar tarefas. Além disso, a API possui uma integração com o [NewsAPI](https://newsapi.org/) para exibir notícias relacionadas às palavras-chave das tarefas.
 
-bash
-Copiar código
-npm install
-Inicie o servidor de desenvolvimento:
+## Funcionalidades
+- **Gerenciamento de Tarefas:**
+  - Adicionar novas tarefas
+  - Excluir tarefas existentes
+  - Listar todas as tarefas
+  - Atualizar tarefas
+- **Integração com Notícias:**
+  - Busca artigos de notícias relacionados às palavras-chave das tarefas, utilizando a NewsAPI.
+  
+## Instalação
 
-bash
-Copiar código
-npm run start:dev
-Compile o projeto para produção:
+1. Clone o repositório:
+ `git clone https://github.com/SimpleDevSam/back-end `
+  2. Instalar dependências:
+ `npm install`
+ 3. Rodar projeto em dev:
+ `npm run start:dev ou npm run start `
+  4. Compilar para prod:
+ `npm run build`
+ 5. Rodar a build para prod:
+ `npm run start:prod`
+ ### Testes
+- Testes unitários
+ `npm run test`
+ - Testes end-to-end (e2e)
+ `npm run test:e2e`
+ - Cobertura de testes
+ `npm run test:cov`
 
-bash
-Copiar código
-npm run build
-Rode o servidor em produção:
+##Dependências/bibliotecas
 
-bash
-Copiar código
-npm run start:prod
-Executando os testes
-Para executar os testes, utilize os seguintes comandos:
-
-Testes unitários:
-
-bash
-Copiar código
-npm run test
-Testes end-to-end (e2e):
-
-bash
-Copiar código
-npm run test:e2e
-Cobertura de testes:
-
-bash
-Copiar código
-npm run test:cov
-Visão geral da aplicação
-Esta API fornece funcionalidades para gerenciar tarefas, como criar, atualizar, recuperar e deletar tarefas. A API foi desenvolvida utilizando o NestJS, um framework Node.js voltado para a criação de aplicações do lado servidor de forma eficiente e escalável.
-
-Visão geral das dependências
-@nestjs/common, @nestjs/core, @nestjs/platform-express: Pacotes centrais do NestJS usados para criar a aplicação.
-@nestjs/config: Para o gerenciamento de variáveis de ambiente.
-@nestjs/mongoose: Integração com o Mongoose para interação com MongoDB.
-mongoose: Ferramenta de modelagem de objetos MongoDB, usada para definir esquemas e interagir com o banco de dados.
-axios: Utilizado para realizar requisições HTTP.
-dotenv: Carrega variáveis de ambiente a partir de um arquivo .env.
-reflect-metadata: Habilita o uso de decorators no TypeScript.
-rxjs: Biblioteca para programação reativa com observables.
-uuid: Para gerar IDs únicos para as tarefas.
-Dependências de desenvolvimento
-@nestjs/cli, @nestjs/schematics, @nestjs/testing: Ferramentas para o desenvolvimento e testes com NestJS.
-jest, ts-jest, @types/jest: Framework de testes Jest e suporte ao TypeScript.
-supertest, @types/supertest: Ferramentas para testes de APIs HTTP.
-typescript: Suporte à linguagem TypeScript.
-eslint, @typescript-eslint/eslint-plugin, @typescript-eslint/parser: Para verificação estática de código TypeScript.
-prettier, eslint-config-prettier, eslint-plugin-prettier: Ferramentas para formatação de código.
-ts-node, ts-loader: Ferramentas para rodar e compilar código TypeScript no Node.js.
-source-map-support: Para melhor exibição de erros durante o desenvolvimento com TypeScript.
-Licença
-Este projeto está licenciado sob a licença UNLICENSED.
+-   **@nestjs/common**, **@nestjs/core**, **@nestjs/platform-express**: Pacotes centrais do NestJS usados para criar a aplicação.
+-   **@nestjs/config**: Para o gerenciamento de variáveis de ambiente.
+-   **@nestjs/mongoose**: Integração com o Mongoose para interação com MongoDB.
+-   **mongoose**: Ferramenta de modelagem de objetos MongoDB, usada para definir esquemas e interagir com o banco de dados.
+-   **axios**: Utilizado para realizar requisições HTTP.
+-   **dotenv**: Carrega variáveis de ambiente a partir de um arquivo `.env`.
+-   **reflect-metadata**: Habilita o uso de decorators no TypeScript.
+-   **rxjs**: Biblioteca para programação reativa com observables.
+-   **uuid**: Para gerar IDs únicos para as tarefas.
