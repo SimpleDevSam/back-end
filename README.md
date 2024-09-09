@@ -12,6 +12,9 @@ Este é um projeto de back-end desenvolvido para uma entrevista técnica na Radi
 
 - Acesse http://localhost:3001/api
 
+## Versão do node
+v20.14.0
+
 ## Variáveis de ambiente
 
 - Favor notar que o banco está hosteado na cloud, não sendo necessário instalá-lo.
